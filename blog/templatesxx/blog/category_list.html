@@ -1,0 +1,13 @@
+{% extends 'blog/list.html' %}
+
+{% block header %}
+    <h3 class="alert alert-primary text-center">{{category.title}}</h3>
+{% endblock %}
+
+{% block next_page %}
+    {% url 'blog:category' category.slug page_obj.next_page_number %}
+{% endblock %}
+
+{% block previous_page %}
+    {% url 'blog:category' category.slug page_obj.previous_page_number %}
+{% endblock %}

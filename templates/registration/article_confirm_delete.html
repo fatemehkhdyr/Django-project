@@ -1,0 +1,27 @@
+
+
+
+{% extends 'registration/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% block title-meta %}
+حذف مقالات
+{%endblock%} {%endblock%}
+
+
+{% block main %}
+<div class="col-md-8 text-center mx-auto">
+    <!-- general form elements -->
+    <div class="card card-danger">
+      <div class="card-header">
+        <h3 class="card-title mb-0 float-left" >حذف مقالات</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">{% csrf_token %}
+            <p>آیا مطمئن هستید که میخواهید مقاله ی {{object}} را حذف کنید</p>
+            {{ form }}
+            <input type="submit" value="حذف">
+        </form>
+    </div>
+    
+{% endblock %}
